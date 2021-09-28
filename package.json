@@ -1,5 +1,5 @@
 {
-  "name": "@badrap/bar-of-progress",
+  "name": "Yahav/bar-of-progress",
   "version": "0.1.2",
   "main": "dist/index.js",
   "main:umd": "dist/index.umd.js",
@@ -10,7 +10,7 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint --ignore-path .gitignore --max-warnings 0 --ext=.js,.ts src",
-    "build": "rm -rf dist && microbundle",
+    "build": "rimraf dist && microbundle",
     "prepack": "npm run build"
   },
   "devDependencies": {
@@ -20,6 +20,7 @@
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.1",
     "microbundle": "^0.13.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "rimraf": "3.0.2^",
   }
 }
