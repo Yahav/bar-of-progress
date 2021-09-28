@@ -1,5 +1,5 @@
 {
-  "name": "Yahav/bar-of-progress",
+  "name": "@yahav/bar-of-progress",
   "version": "0.1.2",
   "main": "dist/index.js",
   "main:umd": "dist/index.umd.js",
@@ -21,6 +21,6 @@
     "eslint-plugin-prettier": "^3.3.1",
     "microbundle": "^0.13.0",
     "prettier": "^2.2.1",
-    "rimraf": "3.0.2^",
+    "rimraf": "^3.0.2"
   }
 }

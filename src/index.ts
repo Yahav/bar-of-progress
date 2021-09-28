@@ -10,11 +10,11 @@ interface ProgressBarConfig {
   /**
    * Class name used for the progress bar element. */
   className: string;
-  
+
   /**
    * Class name used for the progress bar element. */
-  container: the container in which to put the bar;
-  
+  container: string //the container in which to put the bar;
+
   /**
    * How many milliseconds to wait before the progress bar
    * animation starts after calling .start(). */
@@ -86,10 +86,12 @@ export default class ProgressBar {
     let current!: HTMLElement;
 
     this.start = () => {
+      if (document.querySelector(config.container) === null) return;
       if (current && current.parentNode) {
         current.parentNode.removeChild(current);
       }
-      current = document.querySelector(config.container).prependChild(document.createElement("div"));
+      // @ts-ignore
+      current = document.querySelector(config.container).appendChild(document.createElement("div"));
       current.className = config.className + " stopped";
       assign(current.style, initialStyle);
 
