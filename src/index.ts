@@ -10,6 +10,11 @@ interface ProgressBarConfig {
   /**
    * Class name used for the progress bar element. */
   className: string;
+  
+  /**
+   * Class name used for the progress bar element. */
+  container: the container in which to put the bar;
+  
   /**
    * How many milliseconds to wait before the progress bar
    * animation starts after calling .start(). */
@@ -36,6 +41,7 @@ export default class ProgressBar {
       color: "#29e",
       className: "bar-of-progress",
       delay: 80,
+      container: 'body',
     };
     if (options) {
       assign(config, options);
@@ -83,7 +89,7 @@ export default class ProgressBar {
       if (current && current.parentNode) {
         current.parentNode.removeChild(current);
       }
-      current = document.body.appendChild(document.createElement("div"));
+      current = document.querySelector(config.container).prependChild(document.createElement("div"));
       current.className = config.className + " stopped";
       assign(current.style, initialStyle);
 
